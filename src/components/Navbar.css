@@ -1,0 +1,13 @@
+h3.navbar-title {
+    color: #363636;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+h3.navbar-title span {
+    color: #98E2C6;
+}
+
+nav.navbar.is-transparent {
+    background: #F2EFEA;
+}

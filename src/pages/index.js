@@ -4,26 +4,26 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 export default class IndexPage extends React.Component {
-  render() {
+  render () {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+        <section className='section'>
+          <div className='container'>
+            <div className='content'>
+              <h1 className='has-text-weight-bold is-size-2'>Ostatnie wpisy</h1>
             </div>
             {posts
               .map(({ node: post }) => (
                 <div
-                  className="content"
+                  className='content'
                   style={{ border: '1px solid #333', padding: '2em 4em' }}
                   key={post.id}
                 >
                   <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
+                    <Link className='has-text-primary' to={post.fields.slug}>
                       {post.frontmatter.title}
                     </Link>
                     <span> &bull; </span>
@@ -33,7 +33,7 @@ export default class IndexPage extends React.Component {
                     {post.excerpt}
                     <br />
                     <br />
-                    <Link className="button is-small" to={post.fields.slug}>
+                    <Link className='button is-small' to={post.fields.slug}>
                       Keep Reading →
                     </Link>
                   </p>
@@ -49,9 +49,9 @@ export default class IndexPage extends React.Component {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
+      edges: PropTypes.array
+    })
+  })
 }
 
 export const pageQuery = graphql`
