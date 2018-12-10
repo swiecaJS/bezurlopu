@@ -14,6 +14,42 @@ $body-color: #333
 .navbar .navbar-menu
   box-shadow:none !important
 
+h1.header 
+  position: relative;
+  &::after 
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    border-bottom: 7px solid #98e2c6;
+    width: 50px;
+
+.post
+  display: flex;
+
+.post__img
+  flex: 2
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+.post__content
+  flex: 3
+  padding: 20px;
+  
+.post__content__links 
+  display: flex;
+  flex-direction: row-reverse;
+
+.post__content__text 
+  min-height: 50px;
+
+
+.posts
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 20px
+
 .content .taglist
   list-style: none
   margin-bottom: 0

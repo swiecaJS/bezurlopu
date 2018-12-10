@@ -6,6 +6,7 @@ h3.navbar-title {
 
 h3.navbar-title span {
     color: #98E2C6;
+    margin-right: 5px;
 }
 
 nav.navbar.is-transparent {
