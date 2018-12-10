@@ -13,12 +13,10 @@ export default function PostPreview ({ post }) {
       style={{ border: '1px solid #333' }}
       key={post.id}
     >
-      <div className='post__img' style={imageStyle} >
-        {/* <img src={post.frontmatter.image.childImageSharp.fluid.src} alt=""/> */}
-      </div>
+      <div className='post__img' style={imageStyle} />
       <div className='post__content'>
         <div className='post__content__header'>
-          <Link className='has-text-primary' to={post.fields.slug}>
+          <Link className='has-text-primary post__content__header__text' to={post.fields.slug}>
             {post.frontmatter.title}
           </Link>
           <span> &bull; </span>

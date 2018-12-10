@@ -1,10 +1,16 @@
 import './Paralax.css'
-
+import { withPrefix } from 'gatsby'
 import React from 'react'
 
 export default function Paralax () {
+  console.log('paralax', withPrefix('/img/bg.jpg'))
+
+  const imageStyle = {
+    backgroundImage: `url(${withPrefix('/img/bg.jpg')})`
+  }
+
   return (
-    <div className='parallax'>
+    <div className='parallax' style={imageStyle}>
       <div className='paralax_content'>
         <h2>Bez Urlopu</h2>
         <h3>Życie bez czekania na urlop</h3>
