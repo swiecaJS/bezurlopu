@@ -17,6 +17,7 @@
 
   color: #fff;
   text-shadow: 3px 3px black;
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.9));
 }
 
 
@@ -29,7 +30,8 @@
   font-weight: 400;
 }
 
-.paralax_content {
-    /* background: rgba(255,255,255,.3); */
-    /* padding: 20px; */
+@media screen and (max-width: 450px) {
+  .parallax {
+    min-height: 380px;
+  }
 }

@@ -8,10 +8,10 @@ export default class IndexPage extends React.Component {
   render () {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
-
+    const { file } = data
     return (
       <Layout>
-        <Paralax />
+        <Paralax bgImage={file.childImageSharp.fluid.src}/>
         <section className='section'>
           <div className='container'>
             <div className='content'>
@@ -20,7 +20,7 @@ export default class IndexPage extends React.Component {
             <div className='posts'>
               {posts
                 .map(({ node: post }) => (
-                  <PostPreview post={post} key={post.id}/>
+                  <PostPreview post={post} key={post.id} />
                 ))}
             </div>
 
@@ -41,13 +41,21 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
+    file (relativePath: { eq: "bg.JPG" }){
+      id,
+      childImageSharp {
+        fluid (maxHeight: 500) {
+          src
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] },
       filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
     ) {
       edges {
         node {
-          excerpt(pruneLength: 400)
+          excerpt(pruneLength: 200)
           id
           fields {
             slug

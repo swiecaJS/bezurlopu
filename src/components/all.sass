@@ -11,6 +11,8 @@ $primary: $bezurlopu-turquise
 $primary-invert: $kaldi-red-invert
 $body-color: #333
 
+$break-small: 450px;
+
 .navbar .navbar-menu
   box-shadow:none !important
 
@@ -21,17 +23,21 @@ h1.header
     position: absolute;
     left: 0;
     bottom: -8px;
-    border-bottom: 7px solid #98e2c6;
+    border-bottom: 7px solid $bezurlopu-turquise;
     width: 50px;
 
 .post
   display: flex;
+  @media screen and (max-width: $break-small)
+    flex-direction: column;
 
 .post__img
   flex: 2
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @media screen and (max-width: $break-small)
+    min-height: 150px;
 
 .post__content
   flex: 3

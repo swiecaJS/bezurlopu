@@ -2,11 +2,12 @@ import './Paralax.css'
 import { withPrefix } from 'gatsby'
 import React from 'react'
 
-export default function Paralax () {
+export default function Paralax ({ bgImage }) {
   console.log('paralax', withPrefix('/img/bg.jpg'))
 
   const imageStyle = {
-    backgroundImage: `url(${withPrefix('/img/bg.jpg')})`
+    backgroundImage: `url(${bgImage})`
+    // backgroundImage: `url(${withPrefix('/img/bg.jpg')})`
   }
 
   return (
